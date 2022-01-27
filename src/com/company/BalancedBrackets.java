@@ -1,5 +1,8 @@
 package com.company;
 
+import java.util.Collections;
+import java.util.Stack;
+
 public class BalancedBrackets {
     /*
     A bracket is considered to be any one of the following characters: (, ), {, }, [, or ].
@@ -18,9 +21,36 @@ strings of brackets, determine whether each sequence of brackets is balanced. If
      */
 
     public static String isBalanced(String s) {
+        Stack<Character> stack = new Stack<>();
+
+        for (int i = 0; i < s.length(); i++) {
+            switch (s.charAt(i)) {
+                case '{':
+                case '[':
+                case '(':
+                    stack.push(s.charAt(i));
+                    break;
+                case '}':
+                    if (stack.pop() != '{') {
+                        return "NO";
+                    }
+                    break;
+                case ']':
+                    if (stack.pop() != '[') {
+                        return "NO";
+                    }
+                    break;
+                case ')':
+                    if (stack.pop() != '(') {
+                        return "NO";
+                    }
+                    break;
+                default:
+                    return "INVALID_INPUT";
+            }
+        }
 
 
-
-        return "no";
+        return "YES";
     }
 }
