@@ -28,20 +28,38 @@ strings of brackets, determine whether each sequence of brackets is balanced. If
                 case '{':
                 case '[':
                 case '(':
+                    if (i == s.length() - 1) {
+                        return "NO";
+                    }
                     stack.push(s.charAt(i));
                     break;
                 case '}':
+                    if (stack.isEmpty()) {
+                        System.out.println("NO");
+                        return "NO";
+                    }
                     if (stack.pop() != '{') {
+                        System.out.println("NO");
                         return "NO";
                     }
                     break;
                 case ']':
+                    if (stack.isEmpty()) {
+                        System.out.println("NO");
+                        return "NO";
+                    }
                     if (stack.pop() != '[') {
+                        System.out.println("NO");
                         return "NO";
                     }
                     break;
                 case ')':
+                    if (stack.isEmpty()) {
+                        System.out.println("NO");
+                        return "NO";
+                    }
                     if (stack.pop() != '(') {
+                        System.out.println("NO");
                         return "NO";
                     }
                     break;
@@ -50,7 +68,7 @@ strings of brackets, determine whether each sequence of brackets is balanced. If
             }
         }
 
-
+        System.out.println("YES");
         return "YES";
     }
 }
