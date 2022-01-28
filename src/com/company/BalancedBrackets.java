@@ -68,6 +68,10 @@ strings of brackets, determine whether each sequence of brackets is balanced. If
             }
         }
 
+        if (!stack.isEmpty()) {
+            return "NO";
+        }
+
         System.out.println("YES");
         return "YES";
     }
