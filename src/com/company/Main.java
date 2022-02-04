@@ -14,13 +14,20 @@ public class Main {
 
         container.add(new ArrayList<>());
         container.add(new ArrayList<>());
+        container.add(new ArrayList<>());
 
         container.get(0).add(0);
         container.get(0).add(2);
+        container.get(0).add(1);
 
         container.get(1).add(1);
         container.get(1).add(1);
+        container.get(1).add(1);
 
-        ContainersOfBalls.organizingContainers(container);
+        container.get(2).add(2);
+        container.get(2).add(0);
+        container.get(2).add(0);
+
+        System.out.println(ContainersOfBalls.organizingContainers(container));
     }
 }

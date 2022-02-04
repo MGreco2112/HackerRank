@@ -1,9 +1,6 @@
 package com.company;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ContainersOfBalls {
 
@@ -52,6 +49,12 @@ public class ContainersOfBalls {
         if a ball count fits in a bin exactly, move on
         if fails, return Impossible
          */
+
+        for (int i = 0; i < container.get(0).size(); i++) {
+            if (bins.get(i) < ballCounter.get(i)) {
+                return "Impossible";
+            }
+        }
 
 
 
