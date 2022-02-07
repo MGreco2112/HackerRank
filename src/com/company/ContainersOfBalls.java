@@ -51,6 +51,10 @@ public class ContainersOfBalls {
          */
 
         for (int i = 0; i < container.get(0).size(); i++) {
+
+            //Conditional does not yet operate as designed
+            //Will repair soon
+
             if (bins.get(i) < ballCounter.get(i)) {
                 return "Impossible";
             }
