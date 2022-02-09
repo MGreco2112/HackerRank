@@ -14,6 +14,13 @@ public class ContainersOfBalls {
         Map<Integer, Integer> bins = new HashMap<>();
         Map<Integer, Integer> ballCounter = new HashMap<>();
 
+        /*
+        Cliff's solution: Refactor bins hashmap so the key = capacity of bin and value = number of bins at that cap
+        Check ball quantity against number of bins of that value, decrement the bins of that cap
+            if balls don't have a bin at matched cap, return impossible
+            else return possible
+         */
+
         for (int i = 0; i < container.size(); i++) {
 
             if (bins.get(i) == null) {
