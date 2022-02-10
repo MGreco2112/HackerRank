@@ -18,7 +18,7 @@ public class JumpingCloudsRedux {
 
         int energy = 100;
 
-        for (int i = 0; i < c.length;) {
+        for (int i = 0; i < c.length; energy--) {
 //            System.out.println(i);
 
             if (energy == 0 || i == 0 && !firstIteration) {
@@ -49,8 +49,6 @@ public class JumpingCloudsRedux {
             } else {
                 i += k;
             }
-
-            energy--;
         }
 
 
