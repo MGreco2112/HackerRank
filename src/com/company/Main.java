@@ -30,15 +30,21 @@ public class Main {
 //
 //        System.out.println(ContainersOfBalls.organizingContainers(container));
 
-        List<Integer> birds = new ArrayList<>();
+//        List<Integer> birds = new ArrayList<>();
+//
+//        birds.add(1);
+//        birds.add(1);
+//        birds.add(1);
+//        birds.add(2);
+//        birds.add(2);
+//        birds.add(2);
+//
+//        System.out.println(BirdCount.migratoryBirds(birds));
 
-        birds.add(1);
-        birds.add(1);
-        birds.add(1);
-        birds.add(2);
-        birds.add(2);
-        birds.add(2);
+        int[] clouds = {0, 0, 1, 0, 0, 1, 1, 0};
 
-        System.out.println(BirdCount.migratoryBirds(birds));
+        int jumps = 2;
+
+        System.out.println(JumpingCloudsRedux.jumpingOnClouds(clouds, jumps));
     }
 }
