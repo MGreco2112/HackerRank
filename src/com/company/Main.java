@@ -41,10 +41,13 @@ public class Main {
 //
 //        System.out.println(BirdCount.migratoryBirds(birds));
 
-        int[] clouds = {0, 0, 1, 0, 0, 1, 1, 0};
+//        int[] clouds = {0, 0, 1, 0, 0, 1, 1, 0};
+//
+//        int jumps = 2;
+//
+//        System.out.println(JumpingCloudsRedux.jumpingOnClouds(clouds, jumps));
 
-        int jumps = 2;
 
-        System.out.println(JumpingCloudsRedux.jumpingOnClouds(clouds, jumps));
+        SherlockAndAnagrams.sherlockAndAnagrams("aaaa");
     }
 }
