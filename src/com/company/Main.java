@@ -48,6 +48,7 @@ public class Main {
 //        System.out.println(JumpingCloudsRedux.jumpingOnClouds(clouds, jumps));
 
 
-        SherlockAndAnagrams.sherlockAndAnagrams("aaaa");
+//        SherlockAndAnagrams.sherlockAndAnagrams("aaaa");
+
     }
 }
