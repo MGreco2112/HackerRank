@@ -48,7 +48,7 @@ public class Main {
 //        System.out.println(JumpingCloudsRedux.jumpingOnClouds(clouds, jumps));
 
 
-        System.out.println(SherlockAndAnagrams.sherlockAndAnagrams("ifailuhkqq"));
+        System.out.println(SherlockAndAnagrams.sherlockAndAnagrams("abba"));
 
     }
 }

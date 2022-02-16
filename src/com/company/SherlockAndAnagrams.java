@@ -39,26 +39,33 @@ public class SherlockAndAnagrams {
         for (String sub : substrings) {
             boolean containsSame = true;
             for (int i = 0; i < sub.length(); i++) {
-                if (sub.charAt(0) != sub.charAt(i)) {
-                    containsSame = false;
+                int n = i;
+                if (n == 0 && sub.length() > 1) {
+                    n = 1;
                 }
-                chars.add(sub.charAt(i));
-                Collections.sort(chars);
+                if (sub.charAt(0) != sub.charAt(n)) {
+                    containsSame = false;
+                    chars.add(sub.charAt(i));
+                    Collections.sort(chars);
+                }
             }
+
+            if (containsSame) {
+                result++;
+            }
+
             String letters = "";
             for (int i = 0; i < chars.size(); i++) {
                 letters += chars.get(i);
             }
-            if (containsSame && letters.length() > 1) {
-                result++;
-            }
+
             System.out.println(letters);
             chars.clear();
             if (frequency.containsKey(letters)) {
                 int count = frequency.get(letters);
                 count++;
                 frequency.put(letters, count);
-            } else {
+            } else if (!letters.equals("")){
                 frequency.put(letters, 1);
             }
         }
@@ -68,11 +75,11 @@ public class SherlockAndAnagrams {
 
 
         for (String letters : frequency.keySet()) {
-            if (frequency.get(letters) > 1) {
+            if (frequency.get(letters) > 1 && !Objects.equals(letters, "")) {
 
 //                    System.out.println(letters);
 //                    result += frequency.get(letters);
-                    result += frequency.get(letters) - 1;
+                result += frequency.get(letters) - 1;
 
 
             }
