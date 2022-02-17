@@ -1,5 +1,8 @@
 package com.company;
 
+import com.company.linkedlist.ListNode;
+import com.company.linkedlist.RemovingK;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,7 +51,24 @@ public class Main {
 //        System.out.println(JumpingCloudsRedux.jumpingOnClouds(clouds, jumps));
 
 
-        System.out.println(SherlockAndAnagrams.sherlockAndAnagrams("abba"));
+//        System.out.println(SherlockAndAnagrams.sherlockAndAnagrams("abba"));
+
+        // l = [3, 1, 2, 3, 4, 5]
+
+        ListNode one = new ListNode(123);
+        ListNode two = new ListNode(456);
+        ListNode three = new ListNode(789);
+        ListNode four = new ListNode(0);
+//        ListNode five = new ListNode(4);
+//        ListNode six = new ListNode(5);
+
+        one.next = two;
+        two.next = three;
+        three.next = four;
+//        four.next = five;
+//        five.next = six;
+
+        RemovingK.solution(one, 0);
 
     }
 }
