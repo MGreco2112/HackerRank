@@ -1,57 +1,9 @@
 package com.company.linkedlist;
 
 public class RemovingK {
-    // Singly-linked lists are already defined with this interface:
-// class ListNode<T> {
-//   ListNode(T x) {
-//     value = x;
-//   }
-//   T value;
-//   ListNode<T> next;
-// }
-//
-//    ListNode<Integer> solution(ListNode<Integer> l, int k) {
-//        if (l.value == k){
-//            ListNode<Integer> next = l.next;
-//            l = null;
-//
-//            if (next != null) {
-//                solution(next, k);
-//            } else {
-//                return l;
-//            }
-//
-//        } else if (l.next == null) {
-//            return l;
-//        }else {
-//            if (l.next.value.equals(k)) {
-//                l.next = l.next.next;
-//            }
-//
-//            if (l.next != null) {
-//
-//                solution(l.next, k);
-//            } else {
-//                return l;
-//            }
-//        }
-//
-//
-//        // System.out.println(l.next.next.next.next.next.next == null);
-//
-//        return l;
-//    }
 
-    //Attempt 2
 
-    // Singly-linked lists are already defined with this interface:
-// class ListNode<T> {
-//   ListNode(T x) {
-//     value = x;
-//   }
-//   T value;
-//   ListNode<T> next;
-// }
+    //Set each return value to = l.next;
 
     public static ListNode solution(ListNode l, int k) {
     /*
@@ -94,7 +46,7 @@ public class RemovingK {
             solution(l.next, k);
         }
 
-        System.out.println("Is this reached every time?");
+        System.out.println("Results not removed");
         System.out.println(l.value);
         return l;
 
