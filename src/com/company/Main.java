@@ -56,21 +56,12 @@ public class Main {
 
         // l = [3, 1, 2, 3, 4, 5]
 
-        ListNode one = new ListNode(123);
-        ListNode two = new ListNode(456);
-        ListNode three = new ListNode(789);
-        ListNode four = new ListNode(0);
-//        ListNode five = new ListNode(4);
-//        ListNode six = new ListNode(5);
+        ListNode head = new ListNode(0);
 
-        one.next = two;
-        two.next = three;
-        three.next = four;
-//        four.next = five;
-//        five.next = six;
+        head.next = new ListNode(1);
+        head.next.next = new ListNode(0);
 
-        RemovingK.solution(one, 0);
-
+        System.out.println(IsPalindrome.solution(head));
 
 
     }

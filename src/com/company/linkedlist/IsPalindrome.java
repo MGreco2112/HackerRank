@@ -2,6 +2,7 @@ package com.company.linkedlist;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class IsPalindrome {
 
@@ -9,9 +10,11 @@ public class IsPalindrome {
        List<Integer> list = test(l);
 
         for (int i = 0; i < list.size(); i++) {
-            int reverseIndex = list.size() - (1 - i);
+            System.out.println(list.size() - 1 - i);
 
-            if (list.get(i) != list.get(reverseIndex)) {
+            int reverseIndex = list.size() - 1 - i;
+
+            if (!Objects.equals(list.get(i), list.get(reverseIndex))) {
                 return false;
             }
         }
