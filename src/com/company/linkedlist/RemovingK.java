@@ -3,7 +3,7 @@ package com.company.linkedlist;
 public class RemovingK {
 
 
-    ListNode solution(ListNode l, int k) {
+    public static ListNode solution(ListNode l, int k) {
     /*
     Check if current l.value == k
         if so and l.next != null, set variable to l.next, set l to null, run method on var containing l.next

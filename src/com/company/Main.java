@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.linkedlist.IsPalindrome;
 import com.company.linkedlist.ListNode;
 import com.company.linkedlist.RemovingK;
 
@@ -69,6 +70,8 @@ public class Main {
 //        five.next = six;
 
         RemovingK.solution(one, 0);
+
+
 
     }
 }
