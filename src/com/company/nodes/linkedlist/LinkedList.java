@@ -37,7 +37,7 @@ public class LinkedList {
     }
 
     public static void displayList() {
-        //TODO homework
+        //TODO homework 2, 8, 5, 9
     }
 
     private static void find(Node<Integer> head, int query) {
