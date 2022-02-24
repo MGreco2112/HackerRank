@@ -17,7 +17,7 @@ public class LinkedList {
         assertResult(head.next.next.value == 5);
         assertResult(head.next.next.next.value == 9);
 
-        System.out.println(displayList(head));
+        displayList(head);
     }
 
     private static void assertResult(boolean result) {
@@ -44,7 +44,7 @@ public class LinkedList {
         }
     }
 
-    public static String displayList(Node<Integer> head) {
+    public static void displayList(Node<Integer> head) {
         //TODO homework 2, 8, 5, 9
         List<Integer> values = listBuilder(head);
 
@@ -60,7 +60,7 @@ public class LinkedList {
             }
         }
 
-        return display.toString();
+        System.out.println(display);
     }
 
     private static List<Integer> listBuilder(Node<Integer> head) {
