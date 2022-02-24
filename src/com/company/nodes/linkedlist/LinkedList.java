@@ -19,7 +19,7 @@ public class LinkedList {
 
         displayList(head);
 
-        System.out.println(find(head, 10));
+//        System.out.println(find(head, 10));
     }
 
     private static void assertResult(boolean result) {
@@ -50,7 +50,7 @@ public class LinkedList {
         //TODO homework 2, 8, 5, 9
         List<Integer> values = listBuilder(head);
 
-        Collections.sort(values);
+        Collections.reverse(values);
 
         StringBuilder display = new StringBuilder();
 
