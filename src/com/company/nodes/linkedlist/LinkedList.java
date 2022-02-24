@@ -18,6 +18,8 @@ public class LinkedList {
         assertResult(head.next.next.next.value == 9);
 
         displayList(head);
+
+        System.out.println(find(head, 10));
     }
 
     private static void assertResult(boolean result) {
@@ -75,8 +77,20 @@ public class LinkedList {
         }
     }
 
-    private static void find(Node<Integer> head, int query) {
+    private static Node<Integer> find(Node<Integer> head, int query) {
+        // descend list to find a node with the input query
+        // return node if found, else return null
+        if (head == null) {
+            return null;
+        } else {
+            if (head.value == query) {
+                return head;
+            } else {
+                find(head.next, query);
+            }
+        }
 
+        return null;
     }
 
     public static void remove(Node<Integer> head, int query) {
