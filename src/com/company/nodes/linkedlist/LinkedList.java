@@ -10,7 +10,7 @@ public class LinkedList {
         head = addNode(head, 2);
         head = addNode(head, 8);
         head = addNode(head, 5);
-        head = addNode(head, 9);
+        head = recAddNode(head, 9);
 
         assertResult(head.value == 2);
         assertResult(head.next.value == 8);
@@ -19,7 +19,14 @@ public class LinkedList {
 
         displayList(head);
 
-//        System.out.println(find(head, 10));
+        displayList(find(head, 8));
+        displayList(find(head, 5));
+        remove(head, 5);
+        displayList(head);
+        head = remove(head, 2);
+        displayList(head);
+        head = addNode(head, 42);
+        displayList(head);
     }
 
     private static void assertResult(boolean result) {
@@ -47,7 +54,7 @@ public class LinkedList {
     }
 
     public static void displayList(Node<Integer> head) {
-        //TODO homework 2, 8, 5, 9
+
         List<Integer> values = listBuilder(head);
 
         Collections.reverse(values);
@@ -86,14 +93,36 @@ public class LinkedList {
             if (head.value == query) {
                 return head;
             } else {
-                find(head.next, query);
+                return find(head.next, query);
             }
         }
-
-        return null;
     }
 
-    public static void remove(Node<Integer> head, int query) {
+    public static Node<Integer> remove(Node<Integer> head, int query) {
+        Node<Integer> trav = head;
+        //TODO check head first
+        if (head.value == query) {
+            head = head.next;
+            return head;
+        }
 
+        while (trav.next != null && trav.next.value != query) {
+            trav = trav.next;
+        }
+
+        trav.next = trav.next.next;
+
+        return head;
+
+    }
+
+    private static Node<Integer> recAddNode(Node<Integer> head, int value) {
+        if (head == null) {
+            return new Node<Integer>(value);
+        }
+
+        head.next = recAddNode(head.next, value);
+
+        return head;
     }
 }
