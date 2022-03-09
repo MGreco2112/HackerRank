@@ -18,14 +18,19 @@ public class JumpingCloudsOG {
 
         int stepsTaken = 0;
 
-        for (int i = 0; i < c.size() - 1; i++) {
+        for (int i = 0; i < c.size(); i++) {
+
+            if (i + 1 == c.size()) {
+                break;
+            }
 
             if (i + 2 < c.size() && c.get(i + 2) != 1) {
                 i++;
-                stepsTaken++;
-            } else {
-                stepsTaken++;
             }
+
+            stepsTaken++;
+            System.out.println(i);
+            System.out.println("steps taken " + stepsTaken);
         }
 
         return stepsTaken;
