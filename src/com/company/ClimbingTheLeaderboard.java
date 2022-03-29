@@ -12,21 +12,26 @@ public class ClimbingTheLeaderboard {
         List<Integer> output = new ArrayList<>();
 
 
-        for (Integer integer : player) {
+
+        for (int playerPointer = 0; playerPointer < player.size(); playerPointer++) {
             int place = 1;
 
-            ranked.add(integer);
+            ranked.add(player.get(playerPointer));
 
             Collections.sort(ranked);
 
-            for (int scorePointer = ranked.size() - 1; scorePointer > -1; scorePointer--) {
+            for (int scorePointer = ranked.size() - 1; scorePointer > - 1; scorePointer--) {
                 if (scorePointer != ranked.size() - 1) {
                     if (ranked.get(scorePointer + 1) > ranked.get(scorePointer)) {
                         place++;
                     }
                 }
 
-                if (Objects.equals(integer, ranked.get(scorePointer))) {
+
+                //find who she did not beat and place directly below
+                //eliminate duplicates
+
+                if (Objects.equals(player.get(playerPointer), ranked.get(scorePointer))) {
                     output.add(place);
                     break;
                 }
