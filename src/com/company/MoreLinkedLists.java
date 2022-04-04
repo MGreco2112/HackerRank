@@ -38,4 +38,35 @@ public class MoreLinkedLists {
 //        return newHead;
 //
 //    }
+
+
+    //New, better solution
+//    public static Node removeDuplicates(Node head) {
+//        List<Integer> values = new ArrayList<>();
+//
+//        Node pointer = head;
+//
+//        while(pointer != null) {
+//            if (!values.contains(pointer.data)) {
+//                values.add(pointer.data);
+//            }
+//
+//            pointer = pointer.next;
+//        }
+//
+//        Node newHead = new Node(values.get(0));
+//
+//        Node pointer2 = newHead;
+//
+//        for (int i = 1; i < values.size(); i++) {
+//            Node newNode = new Node(values.get(i));
+//
+//            pointer2.next = newNode;
+//
+//            pointer2 = pointer2.next;
+//        }
+//
+//        return newHead;
+//
+//    }
 }
