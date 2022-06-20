@@ -29,6 +29,21 @@ public class BinarySearchTree {
             return leftEdges > rightEdges ? leftEdges : rightEdges;
         }
 
+        /*
+        public class Solution {
+
+    public static void main(String[] args) {
+        //Read input from STDIN.
+        //Print output to STDOUT.
+
+       Scanner scan = new Scanner(System.in);
+       int root = scan.nextInt();
+      //h = log2(n+1) - 1
+      double h = ((Math.log10(root + 1)/Math.log(2)) - 1) * 10;
+      System.out.println(Math.round(h));
+    }
+    }
+         */
 
     public static Node insert(Node root, int data){
         if(root==null){
