@@ -5,45 +5,47 @@ import com.company.nodes.linkedlist.Node;
 import java.util.Scanner;
 
 public class BinarySearchTree {
-        public static int getHeight(Node root){
+    public static int getHeight(Node root){
+        boolean finished = false;
 
-            Node current = root;
+        Node leftTrav = root;
+        Node rightTrav = root;
 
-            int leftEdges = 0;
-            int rightEdges = 0;
+        int leftBranchCount = 0;
+        int rightBranchCount = 0;
 
-            while (current.left != null) {
-                //   System.out.println(current.data);
-                leftEdges++;
-                current = current.left;
+        do {
+            if (leftTrav.left != null) {
+                leftBranchCount++;
+                leftTrav = leftTrav.left;
+            } else if (leftTrav.right != null) {
+                leftBranchCount++;
+                leftTrav = leftTrav.right;
             }
 
-            current = root;
-
-            while (current.right != null) {
-                //   System.out.println(current.data);
-                rightEdges++;
-                current = current.right;
+            if (rightTrav.right != null) {
+                rightBranchCount++;
+                rightTrav = rightTrav.right;
+            } else if (rightTrav.left != null){
+                rightBranchCount++;
+                rightTrav = rightTrav.left;
             }
 
-            return leftEdges > rightEdges ? leftEdges : rightEdges;
-        }
+            if (leftTrav.left == null
+                    && leftTrav.right == null
+                    && rightTrav.right == null
+                    && rightTrav.left == null) {
+                finished = true;
+            }
 
-        /*
-        public class Solution {
+        } while (!finished);
 
-    public static void main(String[] args) {
-        //Read input from STDIN.
-        //Print output to STDOUT.
-
-       Scanner scan = new Scanner(System.in);
-       int root = scan.nextInt();
-      //h = log2(n+1) - 1
-      double h = ((Math.log10(root + 1)/Math.log(2)) - 1) * 10;
-      System.out.println(Math.round(h));
+        return leftBranchCount >= rightBranchCount
+                ?
+                leftBranchCount
+                :
+                rightBranchCount;
     }
-    }
-         */
 
     public static Node insert(Node root, int data){
         if(root==null){
