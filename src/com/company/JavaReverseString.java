@@ -8,10 +8,13 @@ public class JavaReverseString {
 
         Scanner sc=new Scanner(System.in);
         String A=sc.next();
+        /* Enter your code here. Print output to STDOUT. */
 
         int revPointer = A.length() - 1;
 
-        for (int i = 0; i < A.length(); i++, revPointer--) {
+        int halfLength = A.length() / 2;
+
+        for (int i = 0; i < halfLength; i++, revPointer--) {
             if (A.charAt(i) != A.charAt(revPointer)) {
                 System.out.println("No");
                 return;
